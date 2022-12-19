@@ -27,7 +27,7 @@
       },
       async fetchData() {
         await this.fetchDateTimeData();
-        fetchInterval = setInterval(async () => {
+        fetchInterval = window.setInterval(async () => {
           await this.fetchDateTimeData();
         }, 30000);
       }
