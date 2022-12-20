@@ -56,11 +56,11 @@
     <b-row>
       <b-col class="text-center" style="border-right: 1px solid white">
         <div class="yellow-text title">GIÁ MUA</div>
-        <div class="red-text">{{ addThousandSeparators(goldPrice.buy) }}</div>
+        <div class="red-text content">{{ addThousandSeparators(goldPrice.buy) }}</div>
       </b-col>
       <b-col class="text-center">
         <div class="yellow-text title">GIÁ BÁN</div>
-        <div class="red-text">{{ addThousandSeparators(goldPrice.sell) }}</div>
+        <div class="red-text content">{{ addThousandSeparators(goldPrice.sell) }}</div>
       </b-col>
     </b-row>
   </b-container>
@@ -83,5 +83,9 @@
 
   .title {
     margin-top: 5px;
+  }
+
+  .content {
+    margin-top: -5px;
   }
 </style>
