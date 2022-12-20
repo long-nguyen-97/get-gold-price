@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server/index.js",
     "dev": "nodemon server/index.js",
-    "client-build": "cd client && npm install && npm run build"
+    "client-build": "nvm install 14.19.0 && nvm use 14.19.0 && cd client && npm install && npm run build"
   },
   "author": "lhoanngh",
   "license": "MIT",
