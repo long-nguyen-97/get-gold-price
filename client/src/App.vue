@@ -15,21 +15,31 @@
     },
     methods: {
       addThousandSeparators(value: number) {
-        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return value?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       },
-      async fetchDateTimeData() {
+      async fetchDateTimeData(id: number) {
         try {
-          this.goldPrice = await GetGoldPriceAsync();
+          if (isNaN(id)) {
+            return;
+          }
+
+          this.goldPrice = await GetGoldPriceAsync(id);
         }
         catch (e) {
           console.log(e);
         }
       },
       async fetchData() {
-        await this.fetchDateTimeData();
+        const id = Number(this.$route.params.id);
+        await this.fetchDateTimeData(id);
         fetchInterval = window.setInterval(async () => {
-          await this.fetchDateTimeData();
+          await this.fetchDateTimeData(id);
         }, 30000);
+      }
+    },
+    watch: {
+      $route(to, from) {
+        this.fetchData();
       }
     },
     async mounted() {
