@@ -54,7 +54,7 @@
 <template>
   <b-container class="container">
     <b-row>
-      <b-col class="text-center" style="border-right: 1px solid white">
+      <b-col class="text-center">
         <div class="yellow-text title">GIÁ MUA</div>
         <div class="red-text content">{{ addThousandSeparators(goldPrice.buy) }}</div>
       </b-col>
