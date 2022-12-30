@@ -45,6 +45,7 @@
     async mounted() {
       await this.fetchData();
       if (window.location.href.includes('link2')) {
+        // @ts-ignore: Unreachable code error
         document.body.style.zoom = "200%";
       }
     },
