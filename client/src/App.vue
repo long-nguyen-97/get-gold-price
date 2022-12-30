@@ -44,6 +44,9 @@
     },
     async mounted() {
       await this.fetchData();
+      if (window.location.href.includes('link2')) {
+        document.body.style.zoom = "200%";
+      }
     },
     beforeUnmount() {
       clearInterval(fetchInterval);

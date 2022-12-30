@@ -9,6 +9,7 @@ import { createRouter, createWebHistory } from "vue-router"
 
 const routes = [
     { path: '/store/:id', component: App },
+    { path: '/link2/store/:id', component: App },
 ];
 
 const router = createRouter({
